@@ -13,3 +13,57 @@
 2025-06-17 12:43:40,378 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 2025-06-17 12:43:48,342 - INFO - Setting up Chroma DB client...
 2025-06-17 12:43:48,460 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 14:45:18,773 - INFO - Loading embedding model...
+2025-06-17 14:45:18,809 - INFO - Use pytorch device_name: cpu
+2025-06-17 14:45:18,814 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 14:45:25,947 - INFO - Setting up Chroma DB client...
+2025-06-17 14:45:26,162 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 14:45:30,025 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest Internship\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 14:45:31,040 - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-06-17 14:47:21,174 - INFO - Loading embedding model...
+2025-06-17 14:47:21,178 - INFO - Use pytorch device_name: cpu
+2025-06-17 14:47:21,179 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 14:47:29,755 - INFO - Setting up Chroma DB client...
+2025-06-17 14:47:29,898 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 14:47:34,291 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest Internship\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 14:49:17,241 - INFO - Loading embedding model...
+2025-06-17 14:49:17,251 - INFO - Use pytorch device_name: cpu
+2025-06-17 14:49:17,251 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 14:49:26,458 - INFO - Setting up Chroma DB client...
+2025-06-17 14:49:26,729 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 14:49:29,204 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest Internship\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 14:50:01,980 - INFO - Loading embedding model...
+2025-06-17 14:50:01,988 - INFO - Use pytorch device_name: cpu
+2025-06-17 14:50:01,988 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 14:50:10,736 - INFO - Setting up Chroma DB client...
+2025-06-17 14:50:11,017 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 14:50:14,102 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest Internship\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 14:51:22,970 - INFO - Received query: What is Retrieval-Augmented Generation? with top_k: 2
+2025-06-17 14:51:24,327 - INFO - Query embedding computed in 1.35s
+2025-06-17 14:51:24,785 - INFO - Document retrieval took 0.46s
+2025-06-17 14:51:49,791 - INFO - Text generation took 25.00s
+2025-06-17 14:51:49,809 - INFO - Total query handling time: 26.84s

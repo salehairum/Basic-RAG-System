@@ -4,3 +4,7 @@ transformers
 sentence-transformers
 chromadb
 prometheus-fastapi-instrumentator
+pyjwt 
+passlib[bcrypt]
+python-dotenv
+python-multipart
