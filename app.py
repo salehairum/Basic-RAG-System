@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 from transformers import pipeline
 import chromadb
 import logging
+from prometheus_fastapi_instrumentator import Instrumentator
 import time
 
 logging.basicConfig(
@@ -26,6 +27,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+Instrumentator().instrument(app).expose(app)
 
 # Initialize embedding model and Chroma DB client
 logger.info("Loading embedding model...")

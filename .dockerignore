@@ -9,3 +9,5 @@ chroma_persist/
 *.ipynb
 *.sqlite
 .DS_Store
+
+#docker build --progress=plain -t myimage .

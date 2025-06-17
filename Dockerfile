@@ -1,14 +1,19 @@
-# Stage 1: Build
-FROM python:3.10-slim AS builder
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --upgrade pip && pip install --default-timeout=100 --retries=10 --no-cache-dir -r requirements.txt
-
-# Stage 2: Runtime
 FROM python:3.10-slim
+
+# Set working directory
 WORKDIR /app
-COPY --from=builder /app .
+
+# Pre-copy requirements.txt for caching
+COPY requirements.txt .
+
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Copy the rest of the code (after pip to preserve cache)
 COPY . .
-COPY start.sh .
+
+# Make start script executable
 RUN chmod +x start.sh
+
+# Default command
 CMD ["./start.sh"]
