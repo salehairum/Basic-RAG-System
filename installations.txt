@@ -1,2 +1,1 @@
 pip install fastapi uvicorn transformers sentence-transformers chromadb
-access_token: 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
