@@ -1,1 +1,0 @@
-pip install fastapi uvicorn transformers sentence-transformers chromadb
