@@ -1,18 +1,4 @@
-# #running fastAPI: uvicorn app:app --reload
-
-#basic curl commands for testing (on windows command prompt)
-
-# curl -X POST http://localhost:8000/login ^
-#  -H "Content-Type: application/x-www-form-urlencoded" ^
-#  -d "username=user1&password=password123"
-
-#curl -X POST http://localhost:8000/query ^
-#   -H "Content-Type: application/json" ^
-#   -H "Authorization: Bearer JWT_TOKEN" ^
-#   -d "{\"query\": \"What is Retrieval-Augmented Generation?\", \"top_k\": 2}"
-
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from transformers import pipeline
@@ -20,18 +6,14 @@ import chromadb
 import logging
 from prometheus_fastapi_instrumentator import Instrumentator
 import time
-import jwt
-from fastapi import Depends, Header
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from passlib.context import CryptContext
-from datetime import datetime, timezone, timedelta
-from fastapi import Form
+from fastapi import Depends, HTTPException, Security
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+import httpx
+from jose import jwt
+from jose.exceptions import JWTError
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
-#logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -58,55 +40,72 @@ collection = client.get_collection(name="documents")
 
 generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
-JWT_SECRET = os.getenv("JWT_SECRET")
-JWT_ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-# Simple user "database"
-users_db = {
-    "user1": pwd_context.hash("password123"),
-    "user2": pwd_context.hash("mypassword")
-}
-
 class QueryRequest(BaseModel):
     query: str
     top_k: int = 2
 
+
 security = HTTPBearer()
-#utility functions for jwt authentication
-def verify_password(plain_password, hashed_password):
-    return pwd_context.verify(plain_password, hashed_password)
 
-def create_access_token(data: dict, expires_delta: timedelta | None = None):
-    to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + (expires_delta if expires_delta else timedelta(minutes=15))
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, JWT_SECRET, algorithm=JWT_ALGORITHM)
-    return encoded_jwt
+load_dotenv()
 
-def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+
+@app.get("/oauth/callback")
+async def oauth_callback(request: Request):
+    
+    code = request.query_params.get("code")
+    if not code:
+        raise HTTPException(status_code=400, detail="Authorization code not found")
+
+    # Exchange the code for tokens
+    async with httpx.AsyncClient() as client:
+        token_response = await client.post(
+            "https://oauth2.googleapis.com/token",
+            data={
+                "code": code,
+                "client_id": GOOGLE_CLIENT_ID,
+                "client_secret": GOOGLE_CLIENT_SECRET,
+                "redirect_uri": "http://localhost:8000/oauth/callback",
+                "grant_type": "authorization_code",
+            }
+        )
+    if token_response.status_code != 200:
+        content = await token_response.aread()
+        detail = content.decode()
+        raise HTTPException(status_code=token_response.status_code, detail=f"Failed to get tokens: {detail}")
+
+    tokens = token_response.json()
+    # tokens contains access_token, id_token, refresh_token, expires_in, etc.
+    return tokens
+
+
+async def verify_google_token(credentials: HTTPAuthorizationCredentials = Security(security)):
     token = credentials.credentials
     try:
-        payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
-        username = payload.get("sub")
-        if username is None or username not in users_db:
-            raise HTTPException(status_code=401, detail="Invalid authentication credentials")
-        return username
-    except jwt.PyJWTError:
-        raise HTTPException(status_code=401, detail="Invalid authentication credentials")
+        # Verify token by calling Google's tokeninfo endpoint
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                "https://oauth2.googleapis.com/tokeninfo",
+                params={"id_token": token},
+            )
+            if response.status_code != 200:
+                raise HTTPException(status_code=401, detail="Invalid token")
+            token_info = response.json()
 
-#endpoints
-@app.post("/login")
-def login(username: str = Form(...), password: str = Form(...)):
-    if username not in users_db or not verify_password(password, users_db[username]):
-        raise HTTPException(status_code=401, detail="Invalid username or password")
-    access_token = create_access_token(data={"sub": username}, expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
-    return {"access_token": access_token, "token_type": "bearer"}
+            # Verify audience
+            if token_info.get("aud") != GOOGLE_CLIENT_ID:
+                raise HTTPException(status_code=401, detail="Invalid audience")
+
+            # You can extract user info here if needed
+            return token_info
+
+    except httpx.HTTPError:
+        raise HTTPException(status_code=401, detail="Failed to validate token")
 
 @app.post("/query")
-def query_rag(request: QueryRequest, current_user: str = Depends(get_current_user)):
+def query_rag(request: QueryRequest, token_info: dict = Depends(verify_google_token)):
     start_time = time.time()
     try:
         logger.info(f"Received query: {request.query} with top_k: {request.top_k}")
@@ -147,4 +146,3 @@ def query_rag(request: QueryRequest, current_user: str = Depends(get_current_use
     except Exception as e:
         logger.exception("Error during RAG query handling")
         raise HTTPException(status_code=500, detail=str(e))
-   

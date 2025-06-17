@@ -67,3 +67,64 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-06-17 14:51:24,785 - INFO - Document retrieval took 0.46s
 2025-06-17 14:51:49,791 - INFO - Text generation took 25.00s
 2025-06-17 14:51:49,809 - INFO - Total query handling time: 26.84s
+2025-06-17 16:12:31,140 - INFO - Loading embedding model...
+2025-06-17 16:12:31,152 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:12:31,153 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:12:45,447 - INFO - Setting up Chroma DB client...
+2025-06-17 16:12:45,758 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:22:19,080 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjBkOGE2NzM5OWU3ODgyYWNhZTdkN2Y2OGIyMjgwMjU2YTc5NmE1ODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Ink5cjd3M3pyZWtDSWoxTkY3dkRwSHciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Ink5cjd3M3pyZWtDSWoxTkY3dkRwSHciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMTU5MTM4LCJleHAiOjE3NTAxNjI3Mzh9.QI6JLOVZ0TJ2U2RzbfPJp9IwfA54vd2aeQcRiKTFNFBNuVXQ-ylTfrm7hsm_jgmTSmVOc297yOrT5yR190ZhrN8rKxV0G3kyHzAlqro1andPoEZatfkeX3fpQiJWiX_fbVwZQDhg79BoMeKp_QsxfgINu5C9JFnSnSYyXPv7SXZCIXGXiE-Mbjwz3pmLmSFwGJQ6HLfQm7YF05Lo2bpM-xsdM7cta4nBIT5QMBzbCa2uDyeG7vO4u2lQriKnHSqs84pCygJtY5j59wWPaUTOwHmLwLeNjB4NcWHRMUwHWpb8pjDHBamppcYHprCijxjzGT-4Fv1x8YyoYxVHGd8T7w "HTTP/1.1 500 Internal Server Error"
+2025-06-17 16:26:48,554 - INFO - Loading embedding model...
+2025-06-17 16:26:48,573 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:26:48,575 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:27:06,146 - INFO - Setting up Chroma DB client...
+2025-06-17 16:27:06,560 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:41:43,571 - INFO - Loading embedding model...
+2025-06-17 16:41:43,580 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:41:43,582 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:41:55,244 - INFO - Setting up Chroma DB client...
+2025-06-17 16:41:55,771 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:43:48,972 - INFO - Loading embedding model...
+2025-06-17 16:43:48,998 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:43:49,009 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:44:00,762 - INFO - Setting up Chroma DB client...
+2025-06-17 16:44:00,950 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:51:12,919 - INFO - HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 401 Unauthorized"
+2025-06-17 16:53:27,120 - INFO - Loading embedding model...
+2025-06-17 16:53:27,130 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:53:27,130 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:53:36,023 - INFO - Setting up Chroma DB client...
+2025-06-17 16:53:36,266 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:54:22,883 - INFO - Loading embedding model...
+2025-06-17 16:54:22,890 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:54:22,891 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:54:30,652 - INFO - Setting up Chroma DB client...
+2025-06-17 16:54:30,903 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:56:02,007 - INFO - Loading embedding model...
+2025-06-17 16:56:02,012 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:56:02,013 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:56:10,391 - INFO - Setting up Chroma DB client...
+2025-06-17 16:56:10,662 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:56:49,104 - INFO - Loading embedding model...
+2025-06-17 16:56:49,109 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:56:49,109 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:56:56,161 - INFO - Setting up Chroma DB client...
+2025-06-17 16:56:56,397 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 16:58:13,289 - INFO - HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 401 Unauthorized"
+2025-06-17 16:59:26,300 - INFO - Loading embedding model...
+2025-06-17 16:59:26,361 - INFO - Use pytorch device_name: cpu
+2025-06-17 16:59:26,362 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 16:59:36,090 - INFO - Setting up Chroma DB client...
+2025-06-17 16:59:36,654 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 17:00:07,752 - INFO - HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"
+2025-06-17 17:00:49,020 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjBkOGE2NzM5OWU3ODgyYWNhZTdkN2Y2OGIyMjgwMjU2YTc5NmE1ODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InFCd092OXltNDlndjNMazVxc1dCT1EiLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMTYxNjEwLCJleHAiOjE3NTAxNjUyMTB9.FH3XDqsgVY94xI0FAdsRcdeOkr8EOfwnrd5jrrnvWhO85DoPglJvH61jkOkdweKgdfsgdfXc6cShmILIeGUK0v-KAzstP6loZQ5yzYPy1vuQDH1MD93tA-QdB9E3k0Juej3wVvVZOYpAKqgkteh7569BELT6pU-wT3aOWX_ISVVPdtpWtrdsukj-KRMPGsq8HIIreK6TcFVe017Olp7KDo8NvIFmwmSOaSjzpHsciu1rRGXFeLEi0_KuZEZFigMk3GXp3u4ykRDfB46nBnao02y855w1ItCa-NV6YhsvjdYIwagl_JIVLS1ZZcIPteK-jHLJIlHlZAXp3OLo9YvnMA "HTTP/1.1 200 OK"
+2025-06-17 17:00:49,069 - INFO - Received query: What is AI? with top_k: 2
+2025-06-17 17:00:49,775 - INFO - Query embedding computed in 0.70s
+2025-06-17 17:00:50,041 - INFO - Document retrieval took 0.27s
+2025-06-17 17:01:02,091 - INFO - Text generation took 12.05s
+2025-06-17 17:01:02,091 - INFO - Total query handling time: 13.02s
+2025-06-17 17:01:22,294 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjBkOGE2NzM5OWU3ODgyYWNhZTdkN2Y2OGIyMjgwMjU2YTc5NmE1ODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InFCd092OXltNDlndjNMazVxc1dCT1EiLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMTYxNjEwLCJleHAiOjE3NTAxNjUyMTB9.FH3XDqsgVY94xI0FAdsRcdeOkr8EOfwnrd5jrrnvWhO85DoPglJvH61jkOkdweKgdfsgdfXc6cShmILIeGUK0v-KAzstP6loZQ5yzYPy1vuQDH1MD93tA-QdB9E3k0Juej3wVvVZOYpAKqgkteh7569BELT6pU-wT3aOWX_ISVVPdtpWtrdsukj-KRMPGsq8HIIreK6TcFVe017Olp7KDo8NvIFmwmSOaSjzpHsciu1rRGXFeLEi0_KuZEZFigMk3GXp3u4ykRDfB46nBnao02y855w1ItCa-NV6YhsvjdYIwagl_JIVLS1ZZcIPteK-jHLJIlHlZAXp3OLo9YvnMA "HTTP/1.1 200 OK"
+2025-06-17 17:01:22,328 - INFO - Received query: What is ChromaDB? with top_k: 2
+2025-06-17 17:01:22,402 - INFO - Query embedding computed in 0.07s
+2025-06-17 17:01:22,411 - INFO - Document retrieval took 0.00s
+2025-06-17 17:01:24,783 - INFO - Text generation took 2.37s
+2025-06-17 17:01:24,783 - INFO - Total query handling time: 2.46s

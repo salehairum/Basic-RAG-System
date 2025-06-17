@@ -2,7 +2,7 @@ services:
   rag-app:
     image: salehaa/rag-system:latest  
     ports:
-      - "8000:8000"
+      - "8001:8000"
     container_name: rag-api
 
   prometheus:
