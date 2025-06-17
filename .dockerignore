@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+chroma_persist/
+.venv/
+*.cache/
+*.log
+.idea/
+*.ipynb
+*.sqlite
+.DS_Store

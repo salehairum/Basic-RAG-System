@@ -1,0 +1,10 @@
+2025-06-17 12:18:34,538 - INFO - Loading embedding model...
+2025-06-17 12:18:34,541 - INFO - Use pytorch device_name: cpu
+2025-06-17 12:18:34,541 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-17 12:18:51,124 - INFO - Setting up Chroma DB client...
+2025-06-17 12:18:51,223 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-17 12:19:05,736 - INFO - Received query: What is Retrieval-Augmented Generation? with top_k: 2
+2025-06-17 12:19:05,783 - INFO - Query embedding computed in 0.05s
+2025-06-17 12:19:05,865 - INFO - Document retrieval took 0.08s
+2025-06-17 12:19:07,426 - INFO - Text generation took 1.56s
+2025-06-17 12:19:07,427 - INFO - Total query handling time: 1.69s
