@@ -259,3 +259,21 @@ redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddri
 2025-06-18 14:41:40,680 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 2025-06-18 14:41:53,263 - INFO - Setting up Chroma DB client...
 2025-06-18 14:41:53,417 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 15:33:30,419 - INFO - Loading embedding model...
+2025-06-18 15:33:30,425 - INFO - Use pytorch device_name: cpu
+2025-06-18 15:33:30,425 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 15:33:37,105 - INFO - Setting up Chroma DB client...
+2025-06-18 15:33:37,185 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 15:34:22,867 - INFO - HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"
+2025-06-18 15:36:21,061 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTA2ODY4MzE3OTEyMTU5NDQ3MzYiLCJlbWFpbCI6InNhbGVoYXJhbmRvbUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjhUWVd3QkJ6aDZPU1Y3YUF4ZnZCQWciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSVhlRHgwanJVTEU1MWxIYUpVY1ZaczV3eGQ2TnJSeHk1LTN1cGJoNjNJN2IxbW5oRT1zOTYtYyIsImdpdmVuX25hbWUiOiJTYWxlaGEiLCJmYW1pbHlfbmFtZSI6IklydW0iLCJpYXQiOjE3NTAyNDI4NjIsImV4cCI6MTc1MDI0NjQ2Mn0.dv2SYqC84QrDU2S7VuDTVvrb53hhDElm7-aIeY6zIgrXHha209IU1OjcWsbUo6AlgGyqoefEd0CfXCdMUKwYr_DnvxFmHaa4eRPqvjKLPzAFsjle_kV0XqpUIc0rxCtX1IciEcEFC9WGOKPIX2B-FP-77-bYMbqaIIBB1lU4r1IEvpe3sN_utRiQQd2GNnIK2vj0ZjLyJ94kkmZfy5TWjkyZYprc8kadhx-L4EeX_4KA0YYD4vb2b0LJvE5KCg8sC3XB09Li_U0lC6h_La2EYd3QMJnwkthqQBul4NCPBIIkfnmaxv37RMFlvOw71QOG3kjUgbygn3K33co9wh0dBw "HTTP/1.1 200 OK"
+2025-06-18 15:37:28,262 - INFO - Loading embedding model...
+2025-06-18 15:37:28,266 - INFO - Use pytorch device_name: cpu
+2025-06-18 15:37:28,266 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 15:37:35,347 - INFO - Setting up Chroma DB client...
+2025-06-18 15:37:35,430 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 15:37:46,529 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTA2ODY4MzE3OTEyMTU5NDQ3MzYiLCJlbWFpbCI6InNhbGVoYXJhbmRvbUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjhUWVd3QkJ6aDZPU1Y3YUF4ZnZCQWciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSVhlRHgwanJVTEU1MWxIYUpVY1ZaczV3eGQ2TnJSeHk1LTN1cGJoNjNJN2IxbW5oRT1zOTYtYyIsImdpdmVuX25hbWUiOiJTYWxlaGEiLCJmYW1pbHlfbmFtZSI6IklydW0iLCJpYXQiOjE3NTAyNDI4NjIsImV4cCI6MTc1MDI0NjQ2Mn0.dv2SYqC84QrDU2S7VuDTVvrb53hhDElm7-aIeY6zIgrXHha209IU1OjcWsbUo6AlgGyqoefEd0CfXCdMUKwYr_DnvxFmHaa4eRPqvjKLPzAFsjle_kV0XqpUIc0rxCtX1IciEcEFC9WGOKPIX2B-FP-77-bYMbqaIIBB1lU4r1IEvpe3sN_utRiQQd2GNnIK2vj0ZjLyJ94kkmZfy5TWjkyZYprc8kadhx-L4EeX_4KA0YYD4vb2b0LJvE5KCg8sC3XB09Li_U0lC6h_La2EYd3QMJnwkthqQBul4NCPBIIkfnmaxv37RMFlvOw71QOG3kjUgbygn3K33co9wh0dBw "HTTP/1.1 200 OK"
+2025-06-18 15:37:46,543 - INFO - Received query: whats chroma db with top_k: 3
+2025-06-18 15:37:46,617 - INFO - Query embedding computed in 0.07s
+2025-06-18 15:37:46,741 - INFO - Document retrieval took 0.12s
+2025-06-18 15:37:57,838 - INFO - Text generation took 11.10s
+2025-06-18 15:37:57,839 - INFO - Total query handling time: 11.30s

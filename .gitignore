@@ -3,3 +3,4 @@ __pycache__/
 .env
 chroma_persist/
 .log
+.pytest_cache/
