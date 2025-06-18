@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 from app import app, client, verify_google_token
 from embed_and_store import embed_and_store
 import os
+import numpy as np
 
 client_api = TestClient(app)
 
@@ -35,29 +36,35 @@ def test_query_endpoint_invalid_token():
     assert response.status_code == 401
 
 def test_query_success(monkeypatch):
-    # Mock embedder.encode to fixed vector
-    monkeypatch.setattr("app.embedder.encode", lambda x: [[0.1]*384])
+    import numpy as np
+    from unittest.mock import MagicMock
 
-    # Mock get_collection to return a mock collection with a query method
+    # Mock embedder.encode to return a NumPy array
+    monkeypatch.setattr("app.embedder.encode", lambda x: np.array([[0.1]*384]))
+    
+    # Mock Redis: r.get returns None (simulate cache miss), r.set does nothing
+    mock_redis = MagicMock()
+    mock_redis.get.return_value = None
+    mock_redis.set.return_value = True
+    monkeypatch.setattr("app.r", mock_redis)
+
+    # Mock ChromaDB collection query
     class MockCollection:
         def query(self, query_embeddings, n_results):
             return {"documents": [["This is a test document"]]}
     monkeypatch.setattr("app.get_collection", lambda: MockCollection())
 
-    # Mock generator pipeline to return fixed output
-    from unittest.mock import MagicMock
+    # Mock text generator
     mock_generator = MagicMock(return_value=[{"generated_text": "Test answer"}])
     monkeypatch.setattr("app.generator", mock_generator)
 
-    # Mock the verify_google_token dependency to bypass real token check
+    # Mock token verification
     app.dependency_overrides[verify_google_token] = lambda: {"aud": os.getenv("GOOGLE_CLIENT_ID")}
 
+    # Make API call
     headers = {"Authorization": "Bearer mock_token"}
     response = client_api.post("/query", json={"query": "test", "top_k": 1}, headers=headers)
 
+    # Assertions
     assert response.status_code == 200
-    assert "answer" in response.json()
-    assert response.json()["answer"] == "Test answer"
-
-    # Clear the override after test
-    app.dependency_overrides = {}
+    assert response.json() == {"answer": "Test answer"}

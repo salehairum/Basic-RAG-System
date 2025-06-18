@@ -128,3 +128,134 @@ AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-06-17 17:01:22,411 - INFO - Document retrieval took 0.00s
 2025-06-17 17:01:24,783 - INFO - Text generation took 2.37s
 2025-06-17 17:01:24,783 - INFO - Total query handling time: 2.46s
+2025-06-18 13:57:25,435 - INFO - Loading embedding model...
+2025-06-18 13:57:25,440 - INFO - Use pytorch device_name: cpu
+2025-06-18 13:57:25,441 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 13:57:34,614 - INFO - Setting up Chroma DB client...
+2025-06-18 13:57:34,723 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 13:58:09,307 - INFO - HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"
+2025-06-18 14:00:53,060 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjY0cXdvd1JvZWZ5eVFHXzd3RUY4c3ciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMjM3MDkzLCJleHAiOjE3NTAyNDA2OTN9.Fvsxw3sTdRIP60Z1d5EbdDGRb5hm25PdwbNgjsdUerWW8FMkitdpNHV-UkJFRuhEaHlLd0-rpdzVwwYBWsXnZUXlZu_BYDT0V__-u4D65-OIR9rrQ6KbAHV-q860dw0czO9zicjJ99l8Z27DEJ2dgd92FLmHtPdLA8WTXBNkCxOrFy8rs8JjXyNbkORBn7EaOrTWr8HONaYuBR-OXKmEBBs7fbcZn8pPmrMc5NpCg9rbuiDGlrboTLdrjtzXz2GbV_AwNTK03U94NIHyOpNjn4XrHxIurwAEADRZ8w_dTHQvTbJckCk4GUwnvtfIms63YgKO1SP9tSJR7UPzxTSzig "HTTP/1.1 200 OK"
+2025-06-18 14:02:18,062 - INFO - Loading embedding model...
+2025-06-18 14:02:18,066 - INFO - Use pytorch device_name: cpu
+2025-06-18 14:02:18,066 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 14:02:24,913 - INFO - Setting up Chroma DB client...
+2025-06-18 14:02:25,013 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 14:02:34,231 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjY0cXdvd1JvZWZ5eVFHXzd3RUY4c3ciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMjM3MDkzLCJleHAiOjE3NTAyNDA2OTN9.Fvsxw3sTdRIP60Z1d5EbdDGRb5hm25PdwbNgjsdUerWW8FMkitdpNHV-UkJFRuhEaHlLd0-rpdzVwwYBWsXnZUXlZu_BYDT0V__-u4D65-OIR9rrQ6KbAHV-q860dw0czO9zicjJ99l8Z27DEJ2dgd92FLmHtPdLA8WTXBNkCxOrFy8rs8JjXyNbkORBn7EaOrTWr8HONaYuBR-OXKmEBBs7fbcZn8pPmrMc5NpCg9rbuiDGlrboTLdrjtzXz2GbV_AwNTK03U94NIHyOpNjn4XrHxIurwAEADRZ8w_dTHQvTbJckCk4GUwnvtfIms63YgKO1SP9tSJR7UPzxTSzig "HTTP/1.1 200 OK"
+2025-06-18 14:02:34,276 - INFO - Received query: What is ChromaDB with top_k: 3
+2025-06-18 14:02:36,570 - ERROR - Error during RAG query handling
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\retry.py", line 87, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 761, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\anaconda3\Lib\socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\Basic_RAG\app.py", line 138, in query_rag
+    query_embedding = get_cached_embedding(request.query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\Basic_RAG\app.py", line 117, in get_cached_embedding
+    cached = r.get(text)
+             ^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+2025-06-18 14:03:24,817 - INFO - Loading embedding model...
+2025-06-18 14:03:24,821 - INFO - Use pytorch device_name: cpu
+2025-06-18 14:03:24,822 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 14:03:30,721 - INFO - Setting up Chroma DB client...
+2025-06-18 14:03:30,830 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 14:03:46,282 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjY0cXdvd1JvZWZ5eVFHXzd3RUY4c3ciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMjM3MDkzLCJleHAiOjE3NTAyNDA2OTN9.Fvsxw3sTdRIP60Z1d5EbdDGRb5hm25PdwbNgjsdUerWW8FMkitdpNHV-UkJFRuhEaHlLd0-rpdzVwwYBWsXnZUXlZu_BYDT0V__-u4D65-OIR9rrQ6KbAHV-q860dw0czO9zicjJ99l8Z27DEJ2dgd92FLmHtPdLA8WTXBNkCxOrFy8rs8JjXyNbkORBn7EaOrTWr8HONaYuBR-OXKmEBBs7fbcZn8pPmrMc5NpCg9rbuiDGlrboTLdrjtzXz2GbV_AwNTK03U94NIHyOpNjn4XrHxIurwAEADRZ8w_dTHQvTbJckCk4GUwnvtfIms63YgKO1SP9tSJR7UPzxTSzig "HTTP/1.1 200 OK"
+2025-06-18 14:03:46,311 - INFO - Received query: What is ChromaDB with top_k: 3
+2025-06-18 14:03:48,595 - ERROR - Error during RAG query handling
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\retry.py", line 87, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 761, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\anaconda3\Lib\socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\Basic_RAG\app.py", line 138, in query_rag
+    query_embedding = get_cached_embedding(request.query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\Basic_RAG\app.py", line 117, in get_cached_embedding
+    cached = r.get(text)
+             ^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\saleh\OneDrive\Documents\uni\Quest_Internship\venv\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+2025-06-18 14:04:34,622 - INFO - Loading embedding model...
+2025-06-18 14:04:34,625 - INFO - Use pytorch device_name: cpu
+2025-06-18 14:04:34,626 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 14:04:40,497 - INFO - Setting up Chroma DB client...
+2025-06-18 14:04:40,584 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-18 14:04:56,203 - INFO - HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjc3NGJkODcyOWVhMzhlOWMyZmUwYzY0ZDJjYTk0OGJmNjZmMGYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMzUwMzIzMTY5OTQtYWJmNmFubHJudjQzbnBzZGxsN2FuZzNxN2JpMGltaHEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTc4MTEwNTQ4MDMwNzMwMzgiLCJlbWFpbCI6InNhbGVoYWlydW0yMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjY0cXdvd1JvZWZ5eVFHXzd3RUY4c3ciLCJuYW1lIjoiU2FsZWhhIElydW0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlRLbGtWQUhiYmd2N2t6QjU3OHVVVXVNbEZBcnczQWJELXZ3VXR6QUozV2JONUFuSmY9czk2LWMiLCJnaXZlbl9uYW1lIjoiU2FsZWhhIiwiZmFtaWx5X25hbWUiOiJJcnVtIiwiaWF0IjoxNzUwMjM3MDkzLCJleHAiOjE3NTAyNDA2OTN9.Fvsxw3sTdRIP60Z1d5EbdDGRb5hm25PdwbNgjsdUerWW8FMkitdpNHV-UkJFRuhEaHlLd0-rpdzVwwYBWsXnZUXlZu_BYDT0V__-u4D65-OIR9rrQ6KbAHV-q860dw0czO9zicjJ99l8Z27DEJ2dgd92FLmHtPdLA8WTXBNkCxOrFy8rs8JjXyNbkORBn7EaOrTWr8HONaYuBR-OXKmEBBs7fbcZn8pPmrMc5NpCg9rbuiDGlrboTLdrjtzXz2GbV_AwNTK03U94NIHyOpNjn4XrHxIurwAEADRZ8w_dTHQvTbJckCk4GUwnvtfIms63YgKO1SP9tSJR7UPzxTSzig "HTTP/1.1 200 OK"
+2025-06-18 14:04:56,233 - INFO - Received query: What is ChromaDB with top_k: 3
+2025-06-18 14:04:56,306 - INFO - Query embedding computed in 0.07s
+2025-06-18 14:04:56,537 - INFO - Document retrieval took 0.23s
+2025-06-18 14:05:09,647 - INFO - Text generation took 13.11s
+2025-06-18 14:05:09,652 - INFO - Total query handling time: 13.42s
+2025-06-18 14:41:40,609 - INFO - Loading embedding model...
+2025-06-18 14:41:40,616 - INFO - Use pytorch device_name: cpu
+2025-06-18 14:41:40,680 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-06-18 14:41:53,263 - INFO - Setting up Chroma DB client...
+2025-06-18 14:41:53,417 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.

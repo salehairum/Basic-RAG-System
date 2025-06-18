@@ -1,13 +1,13 @@
 services:
-  rag-app:
-    image: salehaa/rag-system:latest
-    ports:
-      - "8001:8000"
-    container_name: rag-api
-    env_file:
-      - .env
-    depends_on:
-      - redis
+  # rag-app:
+  #   image: salehaa/rag-system:latest
+  #   ports:
+  #     - "8001:8000"
+  #   container_name: rag-api
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - redis
 
   redis:
     image: redis:latest
@@ -21,8 +21,8 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    depends_on:
-      - rag-app
+    # depends_on:
+    #   - rag-app
 
   grafana:
     image: grafana/grafana

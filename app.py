@@ -44,10 +44,10 @@ def get_collection():
 
 generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
-REDIS_HOST = os.getenv("REDIS_HOST", "redis") 
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost") 
 REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
 
-# r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
+r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
 class QueryRequest(BaseModel):
     query: str
@@ -113,18 +113,18 @@ async def verify_google_token(credentials: HTTPAuthorizationCredentials = Securi
     except httpx.HTTPError:
         raise HTTPException(status_code=401, detail="Failed to validate token")
 
-# def get_cached_embedding(text: str):
-#     cached = r.get(text)
-#     if cached:
-#         # Deserialize embedding vector
-#         return pickle.loads(cached)
+def get_cached_embedding(text: str):
+    cached = r.get(text)
+    if cached:
+        # Deserialize embedding vector
+        return pickle.loads(cached)
     
-#     # Compute embedding if not cached
-#     embedding = embedder.encode([text])[0].tolist()
+    # Compute embedding if not cached
+    embedding = embedder.encode([text])[0].tolist()
     
-#     # Serialize and store in Redis with 1 hour expiry
-#     r.set(text, pickle.dumps(embedding), ex=3600)
-#     return embedding
+    # Serialize and store in Redis with 1 hour expiry
+    r.set(text, pickle.dumps(embedding), ex=3600)
+    return embedding
 
 @app.post("/query")
 def query_rag(request: QueryRequest, token_info: dict = Depends(verify_google_token)):
@@ -135,8 +135,8 @@ def query_rag(request: QueryRequest, token_info: dict = Depends(verify_google_to
 
         # Embedding
         embed_start = time.time()
-        # query_embedding = get_cached_embedding(request.query)
-        query_embedding = embedder.encode([request.query])[0]
+        query_embedding = get_cached_embedding(request.query)
+        # query_embedding = embedder.encode([request.query])[0]
         logger.info(f"Query embedding computed in {time.time() - embed_start:.2f}s")
 
         # Retrieval

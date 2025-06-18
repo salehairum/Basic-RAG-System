@@ -5,7 +5,7 @@ import httpx
 from app import verify_google_token, query_rag, QueryRequest
 import os
 from embed_and_store import embed_and_store
-
+import numpy as np 
 
 @pytest.mark.asyncio
 async def test_verify_google_token_valid(monkeypatch):
@@ -23,30 +23,34 @@ async def test_verify_google_token_valid(monkeypatch):
     assert result["aud"] == os.getenv("GOOGLE_CLIENT_ID")
 
 def test_query_rag_flow(monkeypatch):
-    # Mock embedding model encode method to return a fixed embedding vector
-    monkeypatch.setattr("app.embedder.encode", lambda x: [[0.1] * 384])
+    import numpy as np
+    from unittest.mock import MagicMock
 
-    # Create a mock collection class with a query method returning dummy docs
+    # Mock embedder.encode to return a NumPy array
+    monkeypatch.setattr("app.embedder.encode", lambda x: np.array([[0.1] * 384]))
+
+    # Mock Redis cache (simulate cache miss and successful set)
+    mock_redis = MagicMock()
+    mock_redis.get.return_value = None  # Simulate cache miss
+    mock_redis.set.return_value = True  # Simulate successful caching
+    monkeypatch.setattr("app.r", mock_redis)
+
+    # Mock ChromaDB collection with a fake query result
     class MockCollection:
         def query(self, query_embeddings, n_results):
-            return {
-                "documents": [["Test document 1", "Test document 2"]]
-            }
-
-    # Patch app.get_collection to return the mock collection
+            return {"documents": [["Test document 1", "Test document 2"]]}
     monkeypatch.setattr("app.get_collection", lambda: MockCollection())
 
-    # Patch the generator pipeline to return the fixed answer
-    from unittest.mock import MagicMock
+    # Mock text generation pipeline
     mock_generator = MagicMock(return_value=[{"generated_text": "Test answer"}])
     monkeypatch.setattr("app.generator", mock_generator)
 
-    # Create a QueryRequest object
+    # Create a fake request
     req = QueryRequest(query="What is FastAPI?", top_k=2)
 
-    # Call the endpoint function directly (note it’s not async)
+    # Directly call the route function (sync function, no await needed)
     result = query_rag(req, token_info={"aud": os.getenv("GOOGLE_CLIENT_ID")})
 
-    # Assertions to verify behavior
+    # Validate the output
     assert "answer" in result
     assert result["answer"] == "Test answer"
