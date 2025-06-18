@@ -7,7 +7,7 @@ def embed_and_store(documents):
     
     # Initialize Chroma client and collection
     client = chromadb.PersistentClient(path="./chroma_persist")
-    collection = client.create_collection(name="documents")
+    collection = client.get_or_create_collection(name="documents")
     
     # Embed documents
     embeddings = embedder.encode(documents).tolist()   #uses BERT contextual embedding.

@@ -11,3 +11,4 @@ python-multipart
 httpx 
 python-jose[cryptography]
 redis
+pytest-asyncio
