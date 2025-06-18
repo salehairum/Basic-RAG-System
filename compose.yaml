@@ -1,9 +1,19 @@
 services:
   rag-app:
-    image: salehaa/rag-system:latest  
+    image: salehaa/rag-system:latest
     ports:
       - "8001:8000"
     container_name: rag-api
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
 
   prometheus:
     image: prom/prometheus
