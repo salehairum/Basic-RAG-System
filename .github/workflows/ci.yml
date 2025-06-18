@@ -24,8 +24,8 @@ jobs:
         pip install pytest
 
     - name: Run tests
+      working-directory: RAG_System
       run: |
-        cd RAG_Systemuvi
         pytest 
 
     - name: Get short commit SHA
