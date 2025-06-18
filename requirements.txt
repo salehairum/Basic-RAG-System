@@ -10,5 +10,3 @@ python-dotenv
 python-multipart
 httpx 
 python-jose[cryptography]
-pip install fastapi uvicorn chromadb transformers sentence-transformers
-pip install prometheus-fastapi-instrumentator pyjwt passlib[bcrypt]  python-dotenv python-multipart httpx python-jose[cryptography]
