@@ -4,6 +4,7 @@ from fastapi.security import HTTPAuthorizationCredentials
 import httpx
 from app import verify_google_token, query_rag, QueryRequest
 import os
+from embed_and_store import embed_and_store
 
 
 @pytest.mark.asyncio

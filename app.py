@@ -38,7 +38,9 @@ embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
 logger.info("Setting up Chroma DB client...")
 client = chromadb.PersistentClient(path="./chroma_persist")
-collection = client.get_collection(name="documents")
+
+def get_collection():
+    return client.get_collection(name="documents")
 
 generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
@@ -126,6 +128,7 @@ def get_cached_embedding(text: str):
 
 @app.post("/query")
 def query_rag(request: QueryRequest, token_info: dict = Depends(verify_google_token)):
+    collection = get_collection()
     start_time = time.time()
     try:
         logger.info(f"Received query: {request.query} with top_k: {request.top_k}")

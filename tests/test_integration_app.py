@@ -1,26 +1,43 @@
-import os
 import pytest
 from fastapi.testclient import TestClient
-from app import app
+from app import app, client  # import your PersistentClient instance
+from embed_and_store import embed_and_store
 
-client = TestClient(app)
+client_api = TestClient(app)
+
+docs = [
+    "FastAPI is a modern, fast web framework for Python.",
+    "Hugging Face provides powerful pretrained models.",
+    "Chroma DB is a vector database optimized for embeddings.",
+    "Retrieval-Augmented Generation combines retrieval with generation.",
+]
+
+@pytest.fixture(scope="module", autouse=True)
+def setup_and_teardown():
+    # Setup: create and populate collection
+    embed_and_store(docs)
+    yield
+    # Teardown: delete collection after tests
+    try:
+        client.delete_collection(name="documents")
+    except Exception:
+        pass
 
 def test_oauth_callback_missing_code():
-    response = client.get("/oauth/callback")
+    response = client_api.get("/oauth/callback")
     assert response.status_code == 400
     assert response.json()["detail"] == "Authorization code not found"
 
-
 def test_query_endpoint_invalid_token():
     headers = {"Authorization": "Bearer invalid_token"}
-    response = client.post("/query", json={"query": "test", "top_k": 2}, headers=headers)
+    response = client_api.post("/query", json={"query": "test", "top_k": 2}, headers=headers)
     assert response.status_code == 401
-    
+
 def test_query_success(monkeypatch):
     monkeypatch.setattr("app.embedder.encode", lambda x: [[0.1]*384])
     monkeypatch.setattr("app.collection.query", lambda **kwargs: {"documents": [["This is a test document"]]})
     monkeypatch.setattr("app.generator.__call__", lambda *args, **kwargs: [{"generated_text": "Test answer"}])
     headers = {"Authorization": "Bearer mock_token"}
-    response = client.post("/query", json={"query": "test", "top_k": 1}, headers=headers)
+    response = client_api.post("/query", json={"query": "test", "top_k": 1}, headers=headers)
     assert response.status_code == 200
     assert "answer" in response.json()
