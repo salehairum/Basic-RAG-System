@@ -4,3 +4,4 @@ __pycache__/
 chroma_persist/
 .log
 .pytest_cache/
+*.onnx
