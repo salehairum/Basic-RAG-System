@@ -1,0 +1,11 @@
+transformers
+datasets
+evaluate
+torch
+onnx
+onnxruntime
+optimum
+nltk
+rouge-score
+absl-py
+bert_score
